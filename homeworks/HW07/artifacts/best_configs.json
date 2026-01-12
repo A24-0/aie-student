@@ -1,0 +1,41 @@
+{
+  "dataset1": {
+    "method": "DBSCAN",
+    "params": {
+      "eps": 1.7000000000000002,
+      "min_samples": 3
+    },
+    "metrics": {
+      "silhouette": 0.5216395622404242,
+      "davies_bouldin": 0.6853295219054457,
+      "calinski_harabasz": 11786.954622671532,
+      "noise_ratio": 0.0
+    }
+  },
+  "dataset2": {
+    "method": "DBSCAN",
+    "params": {
+      "eps": 0.7000000000000001,
+      "min_samples": 7
+    },
+    "metrics": {
+      "silhouette": 0.3520987973628631,
+      "davies_bouldin": 0.8075441633093547,
+      "calinski_harabasz": 111.56938232117409,
+      "noise_ratio": 0.0165
+    }
+  },
+  "dataset3": {
+    "method": "DBSCAN",
+    "params": {
+      "eps": 0.1,
+      "min_samples": 7
+    },
+    "metrics": {
+      "silhouette": 0.39833257707856573,
+      "davies_bouldin": 0.7539623705713321,
+      "calinski_harabasz": 2120.325878227506,
+      "noise_ratio": 0.9650666666666666
+    }
+  }
+}
