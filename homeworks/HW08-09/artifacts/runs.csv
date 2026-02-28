@@ -1,0 +1,8 @@
+experiment_id,dataset,seed,model_summary,optimizer,lr,momentum,weight_decay,epochs_trained,best_val_accuracy,best_val_loss
+E1,CIFAR10,42,"MLP 256-128 ReLU, no dropout/batchnorm",Adam,0.001,,0,20,0.5116,1.391934609222412
+E2,CIFAR10,42,MLP 256-128 ReLU + Dropout(0.3),Adam,0.001,,0,20,0.4626,1.5368374132156373
+E3,CIFAR10,42,MLP 256-128 ReLU + BatchNorm1d,Adam,0.001,,0,20,0.5169,1.6570989589691163
+E4,CIFAR10,42,MLP 256-128 ReLU + BatchNorm1d + EarlyStopping,Adam,0.001,,0,12,0.5216,1.3742833465576172
+O1,CIFAR10,42,"same as E4, lr=0.1",Adam,0.1,,0,6,0.4555,1.553172038269043
+O2,CIFAR10,42,"same as E4, lr=1e-5",Adam,1e-05,,0,6,0.4588,1.6338046356201172
+O3,CIFAR10,42,same as E4,SGD,0.01,0.9,0.0001,12,0.5061,1.4021350856781005

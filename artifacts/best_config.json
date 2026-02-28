@@ -1,0 +1,16 @@
+{
+  "dataset": "CIFAR10",
+  "seed": 42,
+  "hidden_sizes": [
+    256,
+    128
+  ],
+  "dropout_p": 0.0,
+  "use_batchnorm": true,
+  "optimizer": "Adam",
+  "lr": 0.001,
+  "best_epoch": 6,
+  "best_val_accuracy": 0.501,
+  "early_stopping_patience": 4,
+  "timestamp": "2026-02-28T18:55:27.575218"
+}

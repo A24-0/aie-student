@@ -51,6 +51,10 @@ logs/
 .env.*
 !.env.example
 
+# Датасеты (не коммитить в репозиторий)
+data/
+homeworks/HW08-09/data/
+
 # Разное
 *.tmp
 *.bak
