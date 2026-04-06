@@ -1,0 +1,9 @@
+query,expected_source,retrieved_sources,hit_at_k
+Что такое dropout?,d2,d2;d6;d9,1
+Как ускорить поиск по векторам?,d6,d6;d3;d8,1
+Что такое ResNet?,d5,d5;d6;d4,1
+Как валидировать временной ряд?,d8,d6;d8;d4,1
+Что делает BERT?,d9,d9;d6;d3,1
+Как оценить retrieval?,d10,d7;d10;d5,1
+Что такое PyTorch nn?,d1,d1;d6;d9,1
+Что такое Adam?,d3,d3;d6;d5,1

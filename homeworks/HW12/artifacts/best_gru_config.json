@@ -1,0 +1,6 @@
+{
+  "window_size": 48,
+  "hidden": 64,
+  "seed": 42,
+  "epochs": 40
+}

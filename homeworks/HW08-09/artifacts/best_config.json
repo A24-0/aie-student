@@ -1,18 +1,20 @@
 {
-  "dataset": "CIFAR10",
+  "dataset": "FashionMNIST",
   "seed": 42,
-  "model_type": "MLPBatchNorm",
   "hidden_sizes": [
     256,
     128
   ],
-  "dropout_p": null,
+  "dropout_p": 0.3,
+  "use_batchnorm": false,
   "optimizer": "Adam",
   "lr": 0.001,
-  "batch_size": 128,
-  "early_stopping_patience": 5,
-  "best_val_accuracy": 0.5216,
-  "saved_at": "2026-02-28T17:53:57.293034",
-  "test_accuracy": 0.5101,
-  "test_loss": 1.3864911027908324
+  "batch_size": 256,
+  "early_stopping_patience": 4,
+  "best_epoch": 13,
+  "best_val_accuracy": 0.8874166666666666,
+  "best_val_loss": 0.3168432815869649,
+  "test_accuracy": 0.8794,
+  "test_loss": 0.33670711266994474,
+  "saved_at": "2026-04-06T21:08:02.399589"
 }
