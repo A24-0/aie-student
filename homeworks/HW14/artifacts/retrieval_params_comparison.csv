@@ -1,0 +1,4 @@
+variant,chunk_size,overlap,top_k,hit_at_k
+A,40,10,3,1.0
+B,80,20,3,1.0
+C,80,20,5,1.0

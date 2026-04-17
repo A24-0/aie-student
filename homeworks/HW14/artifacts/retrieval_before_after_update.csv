@@ -1,2 +1,4 @@
 query,before_retrieved_sources,after_retrieved_sources,changed
 Что такое IVF в FAISS?,d6;d4;d5,d11;d6;d4,True
+Для чего нужен HNSW в FAISS?,d6;d5;d4,d11;d6;d5,True
+Какую политику логирования источников добавили?,d4;d6;d5,d12;d4;d6,True
