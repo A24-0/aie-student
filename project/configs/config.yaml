@@ -1,0 +1,28 @@
+paths:
+  corpus: data/corpus.json
+  eval_set: data/eval.json
+  artifacts_dir: artifacts
+
+chunking:
+  chunk_size: 120
+  overlap: 20
+
+retrieval:
+  embedding_model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+  method: hybrid          # bm25 | dense | hybrid
+  top_k: 5
+  candidate_k: 20
+  rrf_k: 60
+  dense_weight: 1.0
+  bm25_weight: 1.0
+
+generation:
+  mode: extractive        # extractive | llm (llm требует ключ в .env)
+  max_sentences: 3
+  llm_model: openai/gpt-4o-mini
+  llm_base_url: https://openrouter.ai/api/v1
+
+service:
+  host: 0.0.0.0
+  port: 8000
+  log_level: INFO

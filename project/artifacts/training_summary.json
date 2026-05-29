@@ -1,0 +1,17 @@
+{
+  "final_method": "hybrid",
+  "top_k": 5,
+  "embedding_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+  "best_by_mrr": {
+    "method": "hybrid",
+    "top_k": 5,
+    "embedding_model": "paraphrase-multilingual-MiniLM-L12-v2",
+    "rrf_k": 60,
+    "hit@5": 0.9231,
+    "recall@5": 0.9103,
+    "precision@5": 0.1949,
+    "mrr@5": 0.8098,
+    "ndcg@5": 0.8295
+  },
+  "num_eval_queries": 39
+}

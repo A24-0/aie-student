@@ -51,9 +51,10 @@ logs/
 .env.*
 !.env.example
 
-# Датасеты (не коммитить в репозиторий)
-data/
+# Датасеты в homework (не коммитить большие выборки)
+homeworks/*/data/
 homeworks/HW08-09/data/
+# project/data и project/src/data — часть итогового проекта, коммитим
 
 # Разное
 *.tmp

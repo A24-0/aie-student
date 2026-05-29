@@ -1,0 +1,4 @@
+method,top_k,embedding_model,rrf_k,hit@5,recall@5,precision@5,mrr@5,ndcg@5
+bm25,5,paraphrase-multilingual-MiniLM-L12-v2,60,0.8462,0.8205,0.1744,0.7436,0.75
+dense,5,paraphrase-multilingual-MiniLM-L12-v2,60,0.8974,0.8718,0.1897,0.7479,0.7735
+hybrid,5,paraphrase-multilingual-MiniLM-L12-v2,60,0.9231,0.9103,0.1949,0.8098,0.8295

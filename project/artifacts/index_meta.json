@@ -1,0 +1,6 @@
+{
+  "embedding_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+  "num_chunks": 79,
+  "chunk_size": 120,
+  "overlap": 20
+}
