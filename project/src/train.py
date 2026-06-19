@@ -1,8 +1,3 @@
-"""Сборка индексов и прогон экспериментов по retrieval.
-
-Запуск:  python -m src.train
-Результат: индексы в artifacts/ + таблицы метрик + лог экспериментов.
-"""
 
 from __future__ import annotations
 
@@ -39,7 +34,6 @@ def main() -> None:
     summary_rows = []
     detailed_best = None
 
-    # Эксперимент 1: сравнение трёх стратегий retrieval при одинаковом top_k.
     for method in ("bm25", "dense", "hybrid"):
         res = evaluate_method(engine, eval_set, method=method, k=k)
         metrics = res["metrics"]
@@ -55,7 +49,6 @@ def main() -> None:
         if method == cfg.retrieval.method:
             detailed_best = res["per_query"]
 
-    # Эксперимент 2: влияние top_k на гибридный режим.
     for k_try in (1, 3, 5, 10):
         res = evaluate_method(engine, eval_set, method="hybrid", k=k_try)
         params = {

@@ -9,7 +9,7 @@ chunking:
 
 retrieval:
   embedding_model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
-  method: hybrid          # bm25 | dense | hybrid
+  method: hybrid
   top_k: 5
   candidate_k: 20
   rrf_k: 60
@@ -17,7 +17,7 @@ retrieval:
   bm25_weight: 1.0
 
 generation:
-  mode: extractive        # extractive | llm (llm требует ключ в .env)
+  mode: extractive
   max_sentences: 3
   llm_model: openai/gpt-4o-mini
   llm_base_url: https://openrouter.ai/api/v1

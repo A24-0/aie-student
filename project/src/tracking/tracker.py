@@ -7,12 +7,6 @@ from pathlib import Path
 
 
 class ExperimentTracker:
-    """Минималистичный трекер экспериментов.
-
-    Полноценный MLflow для учебного проекта избыточен, поэтому пишем прогоны
-    в один CSV (удобно открыть в ноутбуке) плюс подробный JSONL с параметрами.
-    Интерфейс намеренно похож на MLflow: log_run(params, metrics).
-    """
 
     def __init__(self, artifacts_dir: Path) -> None:
         self.dir = Path(artifacts_dir)
@@ -28,7 +22,6 @@ class ExperimentTracker:
             fh.write(json.dumps({"params": params, "metrics": metrics, "run": name, "timestamp": ts}, ensure_ascii=False) + "\n")
 
         write_header = not self.csv_path.exists()
-        # объединяем заголовки, если набор колонок между прогонами отличается
         existing = []
         if not write_header:
             with self.csv_path.open(encoding="utf-8") as fh:

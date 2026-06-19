@@ -4,11 +4,6 @@ from dataclasses import dataclass
 
 
 def chunk_text(text: str, chunk_size: int = 120, overlap: int = 20) -> list[str]:
-    """Режем текст скользящим окном по словам.
-
-    Документы корпуса короткие, поэтому обычно получается один чанк на документ.
-    Логика общая — чтобы корректно вести себя и на длинных текстах.
-    """
     words = text.split()
     if not words:
         return []

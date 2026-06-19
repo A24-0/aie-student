@@ -17,13 +17,6 @@ def split_sentences(text: str) -> list[str]:
 
 
 class AnswerGenerator:
-    """Формирует ответ по найденным фрагментам.
-
-    По умолчанию работает экстрактивно (без внешних сервисов): выбирает из
-    топ-документов предложения, наиболее близкие к запросу по эмбеддингам.
-    Если включён режим llm и задан ключ в .env — пробует сгенерировать ответ
-    через OpenAI-совместимый API, но при любой ошибке откатывается к экстракции.
-    """
 
     def __init__(self, config: AppConfig, embedder) -> None:
         self.cfg = config
@@ -53,7 +46,6 @@ class AnswerGenerator:
         sims = (s_vec @ q_vec.T).ravel()
         n = min(self.cfg.generation.max_sentences, len(sentences))
         top_idx = np.argsort(-sims)[:n]
-        # сохраняем исходный порядок предложений для читаемости
         chosen = [sentences[i] for i in sorted(top_idx)]
         return " ".join(chosen)
 
@@ -82,6 +74,6 @@ class AnswerGenerator:
             )
             resp.raise_for_status()
             return resp.json()["choices"][0]["message"]["content"].strip()
-        except Exception as exc:  # сеть/ключ/лимиты — не валим сервис
+        except Exception as exc:
             logger.warning("LLM-запрос не удался: %s", exc)
             return None

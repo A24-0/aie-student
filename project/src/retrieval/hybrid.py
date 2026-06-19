@@ -18,11 +18,6 @@ def reciprocal_rank_fusion(
     weights: dict[str, float],
     rrf_k: int = 60,
 ) -> list[tuple[int, float]]:
-    """RRF: складываем вклады 1/(k + rank) от каждого ретривера.
-
-    rankings — словарь {имя_ретривера: [idx в порядке убывания релевантности]}.
-    Идея из статьи Cormack et al.; устойчива к разным масштабам скоров BM25 и косинуса.
-    """
     fused: dict[int, float] = {}
     for name, ranked in rankings.items():
         w = weights.get(name, 1.0)
@@ -32,7 +27,6 @@ def reciprocal_rank_fusion(
 
 
 class HybridRetriever:
-    """Объединяет dense и BM25 через RRF. Может работать и в одиночных режимах."""
 
     def __init__(self, chunks, dense_index, bm25_index, config) -> None:
         self.chunks = chunks

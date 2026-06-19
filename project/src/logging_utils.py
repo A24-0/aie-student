@@ -15,7 +15,6 @@ def setup_logging(level: str = "INFO") -> None:
         format="%(asctime)s | %(levelname)-7s | %(name)s | %(message)s",
         datefmt="%H:%M:%S",
     )
-    # sentence-transformers и huggingface любят шуметь на INFO
     logging.getLogger("sentence_transformers").setLevel(logging.WARNING)
     logging.getLogger("transformers").setLevel(logging.ERROR)
     logging.getLogger("httpx").setLevel(logging.WARNING)

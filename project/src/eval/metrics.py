@@ -41,7 +41,6 @@ def evaluate_run(
     predictions: list[tuple[list[str], set[str]]],
     k: int,
 ) -> dict[str, float]:
-    """predictions — список (retrieved_source_ids, relevant_ids) по каждому запросу."""
     if not predictions:
         return {}
     n = len(predictions)

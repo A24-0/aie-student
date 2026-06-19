@@ -6,14 +6,12 @@ from src.data.preprocess import tokenize
 
 
 class BM25Index:
-    """Лексический поиск BM25 — хорошо ловит точные термины, которые dense иногда пропускает."""
 
     def __init__(self) -> None:
         self._bm25: BM25Okapi | None = None
 
     def build(self, texts: list[str]) -> None:
         corpus_tokens = [tokenize(t) for t in texts]
-        # защита от пустых документов (BM25Okapi падает на пустом корпусе токенов)
         corpus_tokens = [toks if toks else ["__empty__"] for toks in corpus_tokens]
         self._bm25 = BM25Okapi(corpus_tokens)
 

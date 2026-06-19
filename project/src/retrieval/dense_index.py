@@ -9,7 +9,6 @@ from src.retrieval.embedder import Embedder
 
 
 class DenseIndex:
-    """Плотный поиск: эмбеддинги + FAISS IndexFlatIP (косинус на нормированных векторах)."""
 
     def __init__(self, embedder: Embedder) -> None:
         self.embedder = embedder

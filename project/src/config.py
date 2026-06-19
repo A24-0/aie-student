@@ -23,18 +23,17 @@ class ChunkingConfig(BaseModel):
 
 class RetrievalConfig(BaseModel):
     embedding_model: str = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
-    method: str = "hybrid"          # bm25 | dense | hybrid
+    method: str = "hybrid"
     top_k: int = 5
-    candidate_k: int = 20           # сколько берём из каждого ретривера до фьюжна
-    rrf_k: int = 60                 # сглаживающая константа Reciprocal Rank Fusion
+    candidate_k: int = 20
+    rrf_k: int = 60
     dense_weight: float = 1.0
     bm25_weight: float = 1.0
 
 
 class GenerationConfig(BaseModel):
-    mode: str = "extractive"        # extractive | llm
+    mode: str = "extractive"
     max_sentences: int = 3
-    # LLM-параметры читаются из окружения (см. EnvSettings), сюда дублируются дефолты
     llm_model: str = "openai/gpt-4o-mini"
     llm_base_url: str = "https://openrouter.ai/api/v1"
 
@@ -61,7 +60,6 @@ class AppConfig(BaseModel):
 
 
 class EnvSettings(BaseSettings):
-    """Секреты и переопределения только из окружения / .env (в git не попадают)."""
 
     model_config = SettingsConfigDict(
         env_file=PROJECT_ROOT / ".env",
@@ -76,7 +74,6 @@ class EnvSettings(BaseSettings):
     service_port: int | None = None
     generation_mode: str | None = None
 
-    # для режима генерации через LLM
     llm_api_key: str | None = None
     llm_model: str | None = None
     llm_base_url: str | None = None

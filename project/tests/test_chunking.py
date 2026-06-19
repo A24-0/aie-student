@@ -21,7 +21,7 @@ def test_empty_text_gives_no_chunks():
 def test_tokenize_drops_stopwords_and_normalizes_yo():
     tokens = tokenize("Ещё раз про ВКЛАДЫ и проценты")
     assert "вклады" in tokens
-    assert "и" not in tokens  # стоп-слово
+    assert "и" not in tokens
 
 
 def test_normalize_collapses_spaces():

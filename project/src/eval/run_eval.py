@@ -9,7 +9,6 @@ def evaluate_method(engine: RagEngine, eval_set: list[dict], method: str, k: int
     per_query = []
     for item in eval_set:
         hits = engine.retrieve(item["query"], method=method, top_k=k)
-        # один source может дать несколько чанков — схлопываем, сохраняя порядок
         seen = []
         for h in hits:
             if h.source_id not in seen:

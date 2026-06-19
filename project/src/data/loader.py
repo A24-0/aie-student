@@ -14,7 +14,6 @@ class Document:
 
     @property
     def full_text(self) -> str:
-        # заголовок помогает и BM25, и эмбеддингам зацепиться за тему
         return f"{self.title}. {self.text}".strip(". ") if self.title else self.text
 
 

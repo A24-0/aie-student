@@ -27,7 +27,6 @@ class RagResult:
 
 
 class RagEngine:
-    """Связывает данные, retrieval и генерацию. Один объект на жизнь сервиса."""
 
     def __init__(self, config: AppConfig) -> None:
         self.cfg = config
@@ -38,7 +37,6 @@ class RagEngine:
         self.retriever: HybridRetriever | None = None
         self.generator = AnswerGenerator(config, self.embedder)
 
-    # ---- построение / сохранение / загрузка ----
 
     def build(self) -> None:
         docs = load_corpus(self.cfg.path(self.cfg.paths.corpus))
@@ -90,11 +88,9 @@ class RagEngine:
         payload = json.loads(chunks_path.read_text(encoding="utf-8"))
         self.chunks = [Chunk(**c) for c in payload]
         self.dense.load(faiss_path)
-        # BM25 дёшево пересобрать из чанков, отдельно сохранять смысла нет
         self.bm25.build([c.text for c in self.chunks])
         self.retriever = HybridRetriever(self.chunks, self.dense, self.bm25, self.cfg.retrieval)
 
-    # ---- запросы ----
 
     def retrieve(self, query: str, method: str | None = None, top_k: int | None = None):
         if self.retriever is None:

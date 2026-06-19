@@ -24,7 +24,6 @@ def test_predict_returns_answer_and_sources(client):
     data = r.json()
     assert len(data["answer"]) > 10
     assert data["sources"]
-    # релевантный документ про страхование вкладов должен попасть в выдачу
     assert any(s["source_id"] == "dep-04" for s in data["sources"])
 
 
